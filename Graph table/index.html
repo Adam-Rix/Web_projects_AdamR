@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<title>My Graphs</title>
+
+<head>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <h1 class="title">My Graphs</h1>
+
+  <div class="inputs">
+    <div class="input-field">
+      <p class="input-field__title">Key Graph</p>
+      <input type="text" class="input-field__input" id="graph" onkeyup="filterGraph()" placeholder="Enter graph" />
+    </div>
+    <div class="input-field">
+      <p class="input-field__title">Key Nodes</p>
+      <input type="text" class="input-field__input" id="nodes" onkeyup="filterNodes()" placeholder="Enter nodes" />
+    </div>
+    <div class="input-field">
+      <p class="input-field__title">Key Edges</p>
+      <input type="text" class="input-field__input" id="edges" onkeyup="filterEdges()" placeholder="Enter edges" />
+    </div>
+  </div>
+
+  <div class="table__wrapper">
+    <table class="table">
+      <thead class="table__header">
+        <tr>
+          <th class="table__header-item" onclick="sortColumn('Graph')">
+            Graph
+            <span class="table__header-icon" id="graph-icon">&#8645;</span>
+          </th>
+          <th class="table__header-item" onclick="sortColumn('Nodes')">
+            Num Nodes
+            <span class="table__header-icon" id="nodes-icon">&#8645;</span>
+          </th>
+          <th class="table__header-item" onclick="sortColumn('Edges')">
+            Num Edges
+            <span class="table__header-icon" id="edges-icon">&#8645;</span>
+          </th>
+          <th class="table__header-item">Download</th>
+        </tr>
+      </thead>
+      <tbody class="table__body"></tbody>
+    </table>
+  </div>
+
+  <div class="pagination__wrapper">
+    <button onclick="prevPage()" id="btn_prev" class="pagination-control">&#60;</button>
+    <ul class="pagination" id="pages"></ul>
+    <button onclick="nextPage()" id="btn_next" class="pagination-control">&#62;</button>
+  </div>
+</body>
+
+</html>
